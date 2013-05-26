@@ -10,6 +10,18 @@
 #   define DLog(...)
 #endif
 
+#ifdef DEBUG
+#   define DLogCGRect(...) printf("%s\n",[[NSString stringWithFormat:@"%s [Line %d] x: %f - y: %f - width: %f - height: %f", __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__.origin.x, ##__VA_ARGS__.origin.y, ##__VA_ARGS__.size.width, ##__VA_ARGS__.size.height] UTF8String]);
+#else
+#   define DLogCGRect(...)
+#endif
+
+#ifdef DEBUG
+#   define DLogCGPoing(...) printf("%s\n",[[NSString stringWithFormat:@"%s [Line %d] x: %f - y: %f", __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__.x, ##__VA_ARGS__.y] UTF8String]);
+#else
+#   define DLogCGPoing(...)
+#endif
+
 #define ALog(FORMAT, ...) printf("%s\n",[[NSString stringWithFormat:(@"%s [Line %d] " FORMAT), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__] UTF8String]);
 
 #ifdef DEBUG
