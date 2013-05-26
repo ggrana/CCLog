@@ -17,9 +17,9 @@
 #endif
 
 #ifdef DEBUG
-#   define DLogCGPoing(...) printf("%s\n",[[NSString stringWithFormat:@"%s [Line %d] x: %f - y: %f", __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__.x, ##__VA_ARGS__.y] UTF8String]);
+#   define DLogCGPoint(...) printf("%s\n",[[NSString stringWithFormat:@"%s [Line %d] x: %f - y: %f", __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__.x, ##__VA_ARGS__.y] UTF8String]);
 #else
-#   define DLogCGPoing(...)
+#   define DLogCGPoint(...)
 #endif
 
 #define ALog(FORMAT, ...) printf("%s\n",[[NSString stringWithFormat:(@"%s [Line %d] " FORMAT), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__] UTF8String]);
