@@ -23,6 +23,12 @@
 #endif
 
 #ifdef DEBUG
+#   define OLog(...) printf("%s\n",[[NSString stringWithFormat:@"%s [Line %d] %@", __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__] UTF8String]);
+#else
+#   define OLog(...)
+#endif
+
+#ifdef DEBUG
 #   define PLog(FORMAT, ...) printf("%s\n",[[NSString stringWithFormat:(FORMAT), ##__VA_ARGS__] UTF8String]);
 #else
 #   define PLog(...)
