@@ -22,6 +22,12 @@
 #   define DLogCGPoint(...)
 #endif
 
+#ifdef DEBUG
+#   define PLog(FORMAT, ...) printf("%s\n",[[NSString stringWithFormat:(FORMAT), ##__VA_ARGS__] UTF8String]);
+#else
+#   define PLog(...)
+#endif
+
 #define ALog(FORMAT, ...) printf("%s\n",[[NSString stringWithFormat:(@"%s [Line %d] " FORMAT), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__] UTF8String]);
 
 #ifdef DEBUG
